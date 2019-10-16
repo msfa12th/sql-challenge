@@ -27,15 +27,12 @@ CREATE TABLE "titles" (
 );
 
 CREATE TABLE "salaries" (
-    "salary_id" serial   NOT NULL,
     "emp_no" INTEGER   NOT NULL,
     "salary" integer   NOT NULL,
     "from_date" date   NOT NULL,
-    "to_date" date   NOT NULL,
-    CONSTRAINT "pk_salaries" PRIMARY KEY (
-        "salary_id"
-     )
+    "to_date" date   NOT NULL
 );
+
 
 CREATE TABLE "departments" (
     "dept_no" varchar   NOT NULL,
@@ -46,26 +43,18 @@ CREATE TABLE "departments" (
 );
 
 CREATE TABLE "dept_manager" (
-    "dept_mgr_id" serial   NOT NULL,
     "dept_no" varchar   NOT NULL,
     "emp_no" int   NOT NULL,
     "from_date" date   NOT NULL,
-    "to_date" date   NOT NULL,
-    CONSTRAINT "pk_dept_manager" PRIMARY KEY (
-        "dept_mgr_id"
-     )
+    "to_date" date   NOT NULL
 );
-
-CREATE TABLE "dep_emp" (
-    "dep_emp_id" serial   NOT NULL,
+CREATE TABLE "dept_emp" (
     "emp_no" integer   NOT NULL,
     "dept_no" varchar   NOT NULL,
     "from_date" date   NOT NULL,
-    "to_date" date   NOT NULL,
-    CONSTRAINT "pk_dep_emp" PRIMARY KEY (
-        "dep_emp_id"
-     )
+    "to_date" date   NOT NULL
 );
+
 
 ALTER TABLE "titles" ADD CONSTRAINT "fk_titles_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");

@@ -1,5 +1,5 @@
 # sql-challenge
-#Employee Database: A Mystery in Two Parts
+## Employee Database: A Mystery in Two Parts
 
 Create new database and tables to store employee information
 Load employee data from CSV into postgreSQL database tables
